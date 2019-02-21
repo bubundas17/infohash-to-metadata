@@ -13,7 +13,7 @@ This module uses [bittorrent-protocol](https://github.com/feross/bittorrent-prot
 ## install
 
 ```
-npm install bep9-metadata-dl
+npm install infohash-to-metadata
 ```
 
 ## API
@@ -33,7 +33,7 @@ Optional options are:
 
 ### Example:
 ```js
-const fetchMetadata = require('bep9-metadata-dl');
+const fetchMetadata = require('infohash-to-metadata');
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458'; 
@@ -49,7 +49,7 @@ fetchMetadata(INFO_HASH, { maxConns: 10, fetchTimeout: 30000, socketTimeout: 500
 ```
 ### Or Promise based:
 ```js
-const fetchMetadata = require('bep9-metadata-dl');
+const fetchMetadata = require('infohash-to-metadata');
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458'; 
@@ -64,7 +64,7 @@ fetchMetadata(INFO_HASH, { maxConns: 10, fetchTimeout: 30000, socketTimeout: 500
 ### Re-use DHT instance:
 ```js
 const DHT = require('bittorrent-dht');
-const fetchMetadata = require('bep9-metadata-dl');
+const fetchMetadata = require('infohash-to-metadata');
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458';
@@ -91,7 +91,7 @@ fetchMetadata(INFO_HASH2, { maxConns: 10, fetchTimeout: 30000, socketTimeout: 50
 ```
 ### Download directly from a peer:
 ```js
-const fetchMetadata = require('bep9-metadata-dl');
+const fetchMetadata = require('infohash-to-metadata');
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458'; 
@@ -107,7 +107,7 @@ fetchMetadata.fromPeer(INFO_HASH, 'IP_ADDRESS:PORT', { timeout: 5000 },
 ```
 ### Download directly from a peer, Promise based:
 ```js
-const fetchMetadata = require('bep9-metadata-dl');
+const fetchMetadata = require('infohash-to-metadata');
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458'; 
@@ -120,6 +120,3 @@ fetchMetadata.fromPeer(INFO_HASH, 'IP_ADDRESS:PORT', { timeout: 5000 })
 });
 ```
 
-## License
-
-MIT © [Hong Yan](https://github.com/homeryan).
