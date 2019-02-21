@@ -1,0 +1,31 @@
+{
+  "name": "infohash-to-metadata",
+  "version": "0.0.1",
+  "description": "Torrent Metadata Downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homeryan/bep9-metadata-dl.git"
+  },
+  "keywords": [
+    "DHT",
+    "BitTorrent",
+    "magnet",
+    "infohash",
+    "metadata",
+    "swarm",
+    "BEP-9"
+  ],
+  "author": "Bubun Das",
+  "license": "MIT",
+  "dependencies": {
+    "bencode": "^0.10.0",
+    "bittorrent-dht": "^7.4.0",
+    "bittorrent-protocol": "^2.1.6",
+    "torrent-discovery": "^8.1.1",
+    "ut_metadata": "^3.0.8"
+  }
+}
