@@ -1,5 +1,5 @@
-const DHT = require('bittorrent-dht');
-const fetchMetadata = require('../index');
+import DHT from 'bittorrent-dht';
+import fetchMetadata from '../index.js';
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458';

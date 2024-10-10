@@ -2,9 +2,13 @@
   "name": "infohash-to-metadata",
   "version": "0.0.2",
   "description": "Torrent Metadata Downloader",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "node test/index.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "tsc && node dist/test/index.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,11 +26,20 @@
   "author": "Bubun Das",
   "license": "MIT",
   "dependencies": {
-    "bencode": "^0.10.0",
-    "bittorrent-dht": "^7.4.0",
-    "bittorrent-protocol": "^2.1.6",
-    "torrent-discovery": "^8.1.1",
-    "ut_metadata": "^3.0.8",
-    "parse-torrent": "^6.1.2"
+    "bencode": "^4.0.0",
+    "bittorrent-dht": "^11.0.8",
+    "bittorrent-protocol": "^4.1.15",
+    "node-datachannel": "^0.20.0-alpha.2",
+    "parse-torrent": "^11.0.17",
+    "torrent-discovery": "^11.0.11",
+    "ut_metadata": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/bencode": "^2.0.4",
+    "@types/bittorrent-protocol": "^3.1.6",
+    "@types/node": "^22.7.5",
+    "@types/parse-torrent": "^5.8.7",
+    "@types/randombytes": "^2.0.3",
+    "typescript": "^5.6.3"
   }
 }
