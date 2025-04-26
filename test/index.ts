@@ -1,5 +1,5 @@
 import DHT from 'bittorrent-dht';
-import fetchMetadata from '../index.js';
+import fetchMetadata from '../index';
 
 // infohash of ubuntu-16.04.1-server-amd64.iso
 const INFO_HASH = '90289fd34dfc1cf8f316a268add8354c85334458';
@@ -24,12 +24,12 @@ fetchMetadata(INFO_HASH, { maxConns: 100, fetchTimeout: 30000, socketTimeout: 50
     console.log(`[Promise] ${metadata}`);
   }).catch(err => {
     console.log(err);
-});
+  });
 
 // Re-use DHT instance.
 fetchMetadata(INFO_HASH2, { maxConns: 100, fetchTimeout: 30000, socketTimeout: 5000, dht })
   .then(metadata => {
     console.log(`[Promise] ${metadata}`);
   }).catch(err => {
-  console.log(err);
-});
+    console.log(err);
+  });
