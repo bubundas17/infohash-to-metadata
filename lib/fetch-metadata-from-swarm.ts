@@ -11,7 +11,7 @@ interface TorrentMetadataOptions {
   source?: string;
   creationDate?: number; // Unix timestamp for creation date
   // Allow any other custom properties
-  [key: string]: any;
+  // [key: string]: any;
 }
 
 interface MetadataOptions {
