@@ -32,4 +32,10 @@ export declare function createTorrentFile(metadata: TorrentMetadata, outputPath?
  * @returns Promise resolving to the path of the created .torrent file
  */
 export declare function downloadTorrent(infohash: string, outputPath?: string, options?: any): Promise<string>;
+/**
+ * Creates a .torrent file buffer from metadata without writing to disk
+ * @param metadata The torrent metadata
+ * @returns Buffer containing the encoded .torrent file
+ */
+export declare function createTorrentBuffer(metadata: TorrentMetadata): Buffer;
 export {};

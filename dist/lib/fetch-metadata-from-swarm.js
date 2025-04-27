@@ -46,17 +46,70 @@ const fetchMetadataFromSwarm = (infohash, opts = {}, callbackFn) => {
         fetchTimeout: defaults.DEFAULT_FETCH_TIMEOUT,
         socketTimeout: defaults.DEFAULT_SOCKET_TIMEOUT,
         dht: true,
+        asTorrentBuffer: false, // Default to false
+        torrentMetadata: {}, // Default empty custom metadata
         ...opts
     };
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         const discovery = (0, discover_1.default)(infohash, options);
         let timeoutHandle;
-        discovery.on('_bmd_metadata', (metadata) => {
+        discovery.on('_bmd_metadata', async (metadata) => {
             clearTimeout(timeoutHandle);
-            if (callbackFn) {
-                callbackFn(null, metadata);
+            let result = { ...metadata };
+            if (options.asTorrentBuffer) {
+                try {
+                    // Dynamically import to avoid circular dependencies
+                    const { createTorrentBuffer } = await Promise.resolve().then(() => __importStar(require('./create-torrent-file')));
+                    // Prepare torrent metadata with defaults
+                    const torrentMetadata = {
+                        info: { pieces: Buffer.from(''), name: 'unknown', ...(metadata.info || {}) },
+                        ...metadata,
+                        'created by': 'infohash-to-metadata',
+                        'creation date': Math.floor(Date.now() / 1000) // Default to current time
+                    };
+                    // Apply custom metadata if provided
+                    if (options.torrentMetadata) {
+                        if (options.torrentMetadata.createdBy) {
+                            torrentMetadata['created by'] = options.torrentMetadata.createdBy;
+                        }
+                        if (options.torrentMetadata.comment) {
+                            torrentMetadata.comment = options.torrentMetadata.comment;
+                        }
+                        if (options.torrentMetadata.announce) {
+                            torrentMetadata.announce = options.torrentMetadata.announce;
+                        }
+                        if (options.torrentMetadata.announceList) {
+                            torrentMetadata['announce-list'] = options.torrentMetadata.announceList;
+                        }
+                        if (options.torrentMetadata.private !== undefined) {
+                            // Private flag must be set in the info dictionary
+                            if (!torrentMetadata.info) {
+                                torrentMetadata.info = { pieces: Buffer.from(''), name: 'unknown' };
+                            }
+                            torrentMetadata.info.private = options.torrentMetadata.private ? 1 : 0;
+                        }
+                        if (options.torrentMetadata.creationDate !== undefined) {
+                            torrentMetadata['creation date'] = options.torrentMetadata.creationDate;
+                        }
+                        // Apply any other custom fields
+                        for (const [key, value] of Object.entries(options.torrentMetadata)) {
+                            if (!['createdBy', 'comment', 'announce', 'announceList', 'private'].includes(key) && value !== undefined) {
+                                torrentMetadata[key] = value;
+                            }
+                        }
+                    }
+                    // Create the torrent buffer
+                    result.torrentBuffer = createTorrentBuffer(torrentMetadata);
+                }
+                catch (err) {
+                    console.error('Error creating torrent buffer:', err);
+                    // Don't fail the whole operation if buffer creation fails
+                }
             }
-            resolve(metadata);
+            if (callbackFn) {
+                callbackFn(null, result);
+            }
+            resolve(result);
         });
         discovery.on('error', (err) => {
             discovery.destroy();

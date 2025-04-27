@@ -38,6 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createTorrentFile = createTorrentFile;
 exports.downloadTorrent = downloadTorrent;
+exports.createTorrentBuffer = createTorrentBuffer;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const bencode_1 = __importDefault(require("bencode"));
@@ -121,4 +122,25 @@ async function downloadTorrent(infohash, outputPath, options = {}) {
     }
     // Create torrent file
     return createTorrentFile(torrentMetadata, outputPath);
+}
+/**
+ * Creates a .torrent file buffer from metadata without writing to disk
+ * @param metadata The torrent metadata
+ * @returns Buffer containing the encoded .torrent file
+ */
+function createTorrentBuffer(metadata) {
+    // Ensure metadata has required fields
+    if (!metadata.info) {
+        throw new Error('Invalid metadata: missing info dictionary');
+    }
+    // Add creation date if missing
+    if (!metadata['creation date']) {
+        metadata['creation date'] = Math.floor(Date.now() / 1000);
+    }
+    // Add created by if missing
+    if (!metadata['created by']) {
+        metadata['created by'] = 'infohash-to-metadata';
+    }
+    // Encode metadata to bencoded buffer and return
+    return bencode_1.default.encode(metadata);
 }

@@ -1,9 +1,14 @@
 {
   "name": "infohash-to-metadata",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Torrent Metadata Downloader",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",

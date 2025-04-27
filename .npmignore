@@ -1,0 +1,20 @@
+# Source files
+lib/
+*.ts
+!*.d.ts
+
+# Tests
+test/
+
+# Development config
+.git*
+tsconfig.json
+bun.lock
+bun.lockb
+
+# Logs
+*.log
+
+# IDE files
+.vscode
+.idea 
