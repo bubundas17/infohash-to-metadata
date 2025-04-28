@@ -1,4 +1,4 @@
-interface TorrentMetadata {
+export interface TorrentMetadata {
     info: {
         name?: string;
         pieces: Buffer;
@@ -38,4 +38,3 @@ export declare function downloadTorrent(infohash: string, outputPath?: string, o
  * @returns Buffer containing the encoded .torrent file
  */
 export declare function createTorrentBuffer(metadata: TorrentMetadata): Buffer;
-export {};

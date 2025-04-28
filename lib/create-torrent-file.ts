@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import bencode from 'bencode';
 
-interface TorrentMetadata {
+export interface TorrentMetadata {
   info: {
     name?: string;
     pieces: Buffer;

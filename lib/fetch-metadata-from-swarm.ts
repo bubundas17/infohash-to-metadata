@@ -1,6 +1,8 @@
 import discover from "./discover";
 import * as utils from './utils';
 import * as defaults from './defaults';
+import { Metadata, MetadataResult } from '../types/metadata';
+import { TorrentMetadata } from './create-torrent-file';
 
 interface TorrentMetadataOptions {
   createdBy?: string;
@@ -21,19 +23,6 @@ interface MetadataOptions {
   dht?: boolean | any; // Assuming DHT instance can be of any type
   asTorrentBuffer?: boolean; // Whether to return the metadata as a .torrent file buffer
   torrentMetadata?: TorrentMetadataOptions; // Custom torrent metadata
-}
-
-interface Metadata {
-  // Define the structure of metadata here
-  // For example:
-  info_hash: string;
-  name?: string;
-  // Add other properties as needed
-}
-
-// Extended return type that may include a torrent buffer
-interface MetadataResult extends Metadata {
-  torrentBuffer?: Buffer; // Optional torrent buffer if asTorrentBuffer is true
 }
 
 type CallbackFunction = (error: Error | null, metadata?: MetadataResult) => void;
@@ -73,12 +62,28 @@ const fetchMetadataFromSwarm = (
           const { createTorrentBuffer } = await import('./create-torrent-file');
           
           // Prepare torrent metadata with defaults
-          const torrentMetadata = {
+          const torrentMetadata: TorrentMetadata = {
             info: { pieces: Buffer.from(''), name: 'unknown', ...((metadata as any).info || {}) },
-            ...metadata,
             'created by': 'infohash-to-metadata',
             'creation date': Math.floor(Date.now() / 1000) // Default to current time
           };
+          
+          // Copy other metadata properties
+          for (const [key, value] of Object.entries(metadata)) {
+            if (key !== 'info' && key !== 'torrentBuffer') {
+              // Handle the announce array specially
+              if (key === 'announce' && Array.isArray(value)) {
+                // If announce is an array, use the first item as announce
+                // and the whole array in announce-list format
+                if (value.length > 0) {
+                  torrentMetadata.announce = value[0] as string;
+                  torrentMetadata['announce-list'] = value.map(url => [url as string]);
+                }
+              } else {
+                (torrentMetadata as any)[key] = value;
+              }
+            }
+          }
           
           // Apply custom metadata if provided
           if (options.torrentMetadata) {

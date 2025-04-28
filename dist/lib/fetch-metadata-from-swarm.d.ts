@@ -1,3 +1,4 @@
+import { MetadataResult } from '../types/metadata';
 interface TorrentMetadataOptions {
     createdBy?: string;
     comment?: string;
@@ -14,13 +15,6 @@ interface MetadataOptions {
     dht?: boolean | any;
     asTorrentBuffer?: boolean;
     torrentMetadata?: TorrentMetadataOptions;
-}
-interface Metadata {
-    info_hash: string;
-    name?: string;
-}
-interface MetadataResult extends Metadata {
-    torrentBuffer?: Buffer;
 }
 type CallbackFunction = (error: Error | null, metadata?: MetadataResult) => void;
 declare const fetchMetadataFromSwarm: (infohash: string, opts?: MetadataOptions, callbackFn?: CallbackFunction) => Promise<MetadataResult>;

@@ -63,10 +63,26 @@ const fetchMetadataFromSwarm = (infohash, opts = {}, callbackFn) => {
                     // Prepare torrent metadata with defaults
                     const torrentMetadata = {
                         info: { pieces: Buffer.from(''), name: 'unknown', ...(metadata.info || {}) },
-                        ...metadata,
                         'created by': 'infohash-to-metadata',
                         'creation date': Math.floor(Date.now() / 1000) // Default to current time
                     };
+                    // Copy other metadata properties
+                    for (const [key, value] of Object.entries(metadata)) {
+                        if (key !== 'info' && key !== 'torrentBuffer') {
+                            // Handle the announce array specially
+                            if (key === 'announce' && Array.isArray(value)) {
+                                // If announce is an array, use the first item as announce
+                                // and the whole array in announce-list format
+                                if (value.length > 0) {
+                                    torrentMetadata.announce = value[0];
+                                    torrentMetadata['announce-list'] = value.map(url => [url]);
+                                }
+                            }
+                            else {
+                                torrentMetadata[key] = value;
+                            }
+                        }
+                    }
                     // Apply custom metadata if provided
                     if (options.torrentMetadata) {
                         if (options.torrentMetadata.createdBy) {
