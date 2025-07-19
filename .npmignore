@@ -1,7 +1,5 @@
-# Source files
-lib/
-*.ts
-!*.d.ts
+# Built files
+dist/
 
 # Tests
 test/
