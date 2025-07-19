@@ -4,7 +4,8 @@ import addrToIPPort from 'addr-to-ip-port';
 import randombytes from 'randombytes';
 import net from 'net';
 import fetchMetadataFromPeer from './fetch-metadata-from-peer';
-import { createSocketPool, SocketPool } from './socket-pool';
+import { createSocketPool } from './socket-pool';
+import type { SocketPool } from './socket-pool';
 
 const THIS_PORT: number = 65534;    // THIS_PORT is used when an announce message has been sent to the DHT.
 const SELF_ID: Buffer = randombytes(20);

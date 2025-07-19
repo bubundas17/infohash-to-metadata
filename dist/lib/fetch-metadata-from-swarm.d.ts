@@ -1,4 +1,4 @@
-import { MetadataResult } from '../types/metadata';
+import type { MetadataResult } from '../types/metadata';
 interface TorrentMetadataOptions {
     createdBy?: string;
     comment?: string;

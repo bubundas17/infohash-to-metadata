@@ -12,11 +12,12 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "tsc && node dist/test/index.js",
-    "download": "tsc && node dist/test/download-torrent.js",
-    "buffer": "tsc && node dist/test/torrent-buffer.js",
-    "custom": "tsc && node dist/test/custom-metadata.js",
-    "prepublishOnly": "npm run build"
+    "test": "bun test/index.ts",
+    "download": "bun test/download-torrent.ts",
+    "buffer": "bun test/torrent-buffer.ts",
+    "custom": "bun test/custom-metadata.ts",
+    "prepublishOnly": "npm run build",
+    "postinstall": "cd node_modules/webrtc-polyfill/node_modules/node-datachannel && ../../../.bin/prebuild-install -r napi --verbose"
   },
   "repository": {
     "type": "git",
@@ -35,17 +36,17 @@
   "license": "MIT",
   "dependencies": {
     "bencode": "^4.0.0",
-    "bittorrent-dht": "^11.0.9",
-    "bittorrent-protocol": "^4.1.16",
+    "bittorrent-dht": "^11.0.10",
+    "bittorrent-protocol": "^4.1.18",
     "node-datachannel": "^0.20.0",
     "parse-torrent": "^11.0.18",
-    "torrent-discovery": "^11.0.16",
+    "torrent-discovery": "^11.0.17",
     "ut_metadata": "^4.0.3"
   },
   "devDependencies": {
     "@types/bencode": "^2.0.4",
     "@types/bittorrent-protocol": "^3.1.6",
-    "@types/node": "^22.15.2",
+    "@types/node": "^22.16.5",
     "@types/parse-torrent": "^5.8.7",
     "@types/randombytes": "^2.0.3",
     "typescript": "^5.8.3"

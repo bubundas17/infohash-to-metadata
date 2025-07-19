@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2018",
     "module": "commonjs",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -9,7 +10,8 @@
     "outDir": "./dist",
     "rootDir": "./",
     "declaration": true,
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "resolveJsonModule": true
   },
   "include": [
     "index.ts",

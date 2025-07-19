@@ -5,17 +5,17 @@
       "name": "infohash-to-metadata",
       "dependencies": {
         "bencode": "^4.0.0",
-        "bittorrent-dht": "^11.0.9",
-        "bittorrent-protocol": "^4.1.16",
+        "bittorrent-dht": "^11.0.10",
+        "bittorrent-protocol": "^4.1.18",
         "node-datachannel": "^0.20.0",
         "parse-torrent": "^11.0.18",
-        "torrent-discovery": "^11.0.16",
+        "torrent-discovery": "^11.0.17",
         "ut_metadata": "^4.0.3",
       },
       "devDependencies": {
         "@types/bencode": "^2.0.4",
         "@types/bittorrent-protocol": "^3.1.6",
-        "@types/node": "^22.15.2",
+        "@types/node": "^22.16.5",
         "@types/parse-torrent": "^5.8.7",
         "@types/randombytes": "^2.0.3",
         "typescript": "^5.8.3",
@@ -35,7 +35,7 @@
 
     "@types/magnet-uri": ["@types/magnet-uri@5.1.5", "", { "dependencies": { "@types/node": "*" } }, "sha512-SbBjlb1KGe38VfjRR+mwqztJd/4skhdKkRbIzPDhTy7IAeEAPZWIVSEkZw00Qr4ZZOGR3/ATJ20WWPBfrKHGdA=="],
 
-    "@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+    "@types/node": ["@types/node@22.16.5", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-bJFoMATwIGaxxx8VJPeM8TonI8t579oRvgAuT8zFugJsJZgzqv0Fu8Mhp68iecjzG7cnN3mO2dJQ5uUM2EFrgQ=="],
 
     "@types/parse-torrent": ["@types/parse-torrent@5.8.7", "", { "dependencies": { "@types/magnet-uri": "*", "@types/node": "*", "@types/parse-torrent-file": "*" } }, "sha512-vZtYe450hO+KL7B5fejM8CHWg1LPZKeVXlolphPsWf6n4H0ZUlI6ICbqHoaFmH7JQmU2yRbGgyvqqizdFuGPFQ=="],
 
@@ -61,13 +61,13 @@
 
     "bitfield": ["bitfield@4.2.0", "", {}, "sha512-kUTatQb/mBd8uhvdLrUkouGDBUQiJaIOvPlptUwOWp6MFqih4d1MiVf0m3ATxfZSzu+LjW/awFeABltYa62uIA=="],
 
-    "bittorrent-dht": ["bittorrent-dht@11.0.9", "", { "dependencies": { "bencode": "^4.0.0", "debug": "^4.4.0", "k-bucket": "^5.1.0", "k-rpc": "^5.1.0", "last-one-wins": "^1.0.4", "lru": "^3.1.0", "randombytes": "^2.1.0", "record-cache": "^1.2.0" } }, "sha512-aM6m9zvIGi8lMANaxUWcF3yytUxloUCc4gzqa0SOvo22FyeNDHecOXccw6FIZyk4I0IN9KDCj7We+n+RpqnYgg=="],
+    "bittorrent-dht": ["bittorrent-dht@11.0.10", "", { "dependencies": { "bencode": "^4.0.0", "debug": "^4.4.1", "k-bucket": "^5.1.0", "k-rpc": "^5.1.0", "last-one-wins": "^1.0.4", "lru": "^3.1.0", "randombytes": "^2.1.0", "record-cache": "^1.2.0" } }, "sha512-/Xlruvh+nT5IZcDYiCjvDinJy2X5532zJ8vJpVYh4f52IPw29FnjqYAcLenLludupXmFHj/pxntu8KkP7jAbUg=="],
 
     "bittorrent-lsd": ["bittorrent-lsd@2.0.0", "", { "dependencies": { "chrome-dgram": "^3.0.6", "debug": "^4.2.0" } }, "sha512-jV+SMTGNY1iGWjf5cPA2HMeA6axuMQRWwWELtsuZ1FmQmZwC74we92nwtDTfv1WMnLx+oqEjWRri42IHjZitSQ=="],
 
     "bittorrent-peerid": ["bittorrent-peerid@1.3.6", "", {}, "sha512-VyLcUjVMEOdSpHaCG/7odvCdLbAB1y3l9A2V6WIje24uV7FkJPrQrH/RrlFmKxP89pFVDEnE+YlHaFujlFIZsg=="],
 
-    "bittorrent-protocol": ["bittorrent-protocol@4.1.16", "", { "dependencies": { "bencode": "^4.0.0", "bitfield": "^4.1.0", "debug": "^4.4.0", "rc4": "^0.1.5", "streamx": "^2.15.1", "throughput": "^1.0.1", "uint8-util": "^2.2.5", "unordered-array-remove": "^1.0.2" } }, "sha512-93t8h77uAyD8BGSpBo8SqxYyKBA/xgv9N8+WghnXpH2I+JmlmJmddUt8nugPRgj/LNuL1VrWJ26jhYhiVWpRaQ=="],
+    "bittorrent-protocol": ["bittorrent-protocol@4.1.18", "", { "dependencies": { "bencode": "^4.0.0", "bitfield": "^4.2.0", "debug": "^4.4.1", "rc4": "^0.1.5", "streamx": "^2.22.1", "throughput": "^1.0.1", "uint8-util": "^2.2.5", "unordered-array-remove": "^1.0.2" } }, "sha512-+B+j/tgqxtCeBbz7sfjXuzieHqZl9TFBVBUV++lnJQfww5r4C2uqIN9G9DXLwMqIQ6M6GlSihNJJ8RzMy7qchA=="],
 
     "bittorrent-tracker": ["bittorrent-tracker@11.2.1", "", { "dependencies": { "@thaunknown/simple-peer": "^10.0.8", "@thaunknown/simple-websocket": "^9.1.3", "bencode": "^4.0.0", "bittorrent-peerid": "^1.3.6", "chrome-dgram": "^3.0.6", "compact2string": "^1.4.1", "cross-fetch-ponyfill": "^1.0.3", "debug": "^4.3.4", "ip": "^2.0.1", "lru": "^3.1.0", "minimist": "^1.2.8", "once": "^1.4.0", "queue-microtask": "^1.2.3", "random-iterate": "^1.0.1", "run-parallel": "^1.2.0", "run-series": "^1.1.9", "socks": "^2.8.3", "string2compact": "^2.0.1", "uint8-util": "^2.2.5", "unordered-array-remove": "^1.0.2", "ws": "^8.17.0" }, "optionalDependencies": { "bufferutil": "^4.0.8", "utf-8-validate": "^6.0.4" }, "bin": "bin/cmd.js" }, "sha512-SffBgHzNrhn+HBwdRD2st+TYJOs2LhF3ljJFPCYGv592LpGtPxw41UZHTUeY5muWnQl+wopcU8qXM9UEk2WKrA=="],
 
@@ -91,7 +91,7 @@
 
     "data-uri-to-buffer": ["data-uri-to-buffer@4.0.1", "", {}, "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A=="],
 
-    "debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
+    "debug": ["debug@4.4.1", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ=="],
 
     "decompress-response": ["decompress-response@6.0.0", "", { "dependencies": { "mimic-response": "^3.1.0" } }, "sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ=="],
 
@@ -205,7 +205,7 @@
 
     "sprintf-js": ["sprintf-js@1.1.3", "", {}, "sha512-Oo+0REFV59/rz3gfJNKQiBlwfHaSESl1pcGyABQsnnIfWOFt6JNj5gCog2U6MLZ//IGYD+nA8nI+mTShREReaA=="],
 
-    "streamx": ["streamx@2.22.0", "", { "dependencies": { "fast-fifo": "^1.3.2", "text-decoder": "^1.1.0" }, "optionalDependencies": { "bare-events": "^2.2.0" } }, "sha512-sLh1evHOzBy/iWRiR6d1zRcLao4gGZr3C1kzNz4fopCOKJb6xD9ub8Mpi9Mr1R6id5o43S+d93fI48UC5uM9aw=="],
+    "streamx": ["streamx@2.22.1", "", { "dependencies": { "fast-fifo": "^1.3.2", "text-decoder": "^1.1.0" }, "optionalDependencies": { "bare-events": "^2.2.0" } }, "sha512-znKXEBxfatz2GBNK02kRnCXjV+AA4kjZIUxeWSr3UGirZMJfTE9uiwKHobnbgxWyL/JWro8tTq+vOqAK1/qbSA=="],
 
     "string2compact": ["string2compact@2.0.1", "", { "dependencies": { "addr-to-ip-port": "^2.0.0", "ipaddr.js": "^2.0.0" } }, "sha512-Bm/T8lHMTRXw+u83LE+OW7fXmC/wM+Mbccfdo533ajSBNxddDHlRrvxE49NdciGHgXkUQM5WYskJ7uTkbBUI0A=="],
 
@@ -221,7 +221,7 @@
 
     "throughput": ["throughput@1.0.1", "", {}, "sha512-4Mvv5P4xyVz6RM07wS3tGyZ/kPAiKtLeqznq3hK4pxDiTUSyQ5xeFlBiWxflCWexvSnxo2aAfedzKajJqihz4Q=="],
 
-    "torrent-discovery": ["torrent-discovery@11.0.16", "", { "dependencies": { "bittorrent-dht": "^11.0.9", "bittorrent-lsd": "^2.0.0", "bittorrent-tracker": "^11.2.1", "debug": "^4.4.0", "run-parallel": "^1.2.0" } }, "sha512-TPM+p5IYGLAX9G4u85R6omTJUXChvJFvCy6B5NT43f/n5tPqenmLemnQrb5LHHDmitYrcXcxv4dTxKCnrwKvEA=="],
+    "torrent-discovery": ["torrent-discovery@11.0.17", "", { "dependencies": { "bittorrent-dht": "^11.0.10", "bittorrent-lsd": "^2.0.0", "bittorrent-tracker": "^11.2.1", "debug": "^4.4.1", "run-parallel": "^1.2.0" } }, "sha512-lOvw61g93GYrafHuHx8HkHCsX0nB7AoDUTVoQsLDlpjc2QPwld1HMALz9q6Q3BX9m87X8DI9+TrCGnT7QgOR3A=="],
 
     "tunnel-agent": ["tunnel-agent@0.6.0", "", { "dependencies": { "safe-buffer": "^5.0.1" } }, "sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w=="],
 
@@ -247,9 +247,35 @@
 
     "ws": ["ws@8.18.1", "", { "peerDependencies": { "bufferutil": "^4.0.1", "utf-8-validate": ">=5.0.2" } }, "sha512-RKW2aJZMXeMxVpnZ6bck+RswznaxmzdULiBr6KY7XkTnW8uvt0iT9H5DkHUChXrc+uurzwa0rVI16n/Xzjdz1w=="],
 
+    "@thaunknown/simple-peer/debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
+
+    "@thaunknown/simple-peer/streamx": ["streamx@2.22.0", "", { "dependencies": { "fast-fifo": "^1.3.2", "text-decoder": "^1.1.0" }, "optionalDependencies": { "bare-events": "^2.2.0" } }, "sha512-sLh1evHOzBy/iWRiR6d1zRcLao4gGZr3C1kzNz4fopCOKJb6xD9ub8Mpi9Mr1R6id5o43S+d93fI48UC5uM9aw=="],
+
+    "@thaunknown/simple-websocket/debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
+
+    "@thaunknown/simple-websocket/streamx": ["streamx@2.22.0", "", { "dependencies": { "fast-fifo": "^1.3.2", "text-decoder": "^1.1.0" }, "optionalDependencies": { "bare-events": "^2.2.0" } }, "sha512-sLh1evHOzBy/iWRiR6d1zRcLao4gGZr3C1kzNz4fopCOKJb6xD9ub8Mpi9Mr1R6id5o43S+d93fI48UC5uM9aw=="],
+
+    "@types/bencode/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "@types/bittorrent-protocol/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "@types/magnet-uri/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "@types/parse-torrent/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "@types/parse-torrent-file/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "@types/randombytes/@types/node": ["@types/node@22.15.2", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A=="],
+
+    "bittorrent-lsd/debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
+
+    "bittorrent-tracker/debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
+
     "fetch-blob/node-domexception": ["node-domexception@1.0.0", "", {}, "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="],
 
     "k-rpc-socket/bencode": ["bencode@2.0.3", "", {}, "sha512-D/vrAD4dLVX23NalHwb8dSvsUsxeRPO8Y7ToKA015JQYq69MLDOMkC0uGZYA/MPpltLO8rt8eqFC2j8DxjTZ/w=="],
+
+    "ut_metadata/debug": ["debug@4.4.0", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA=="],
 
     "webrtc-polyfill/node-datachannel": ["node-datachannel@0.12.0", "", { "dependencies": { "node-domexception": "^2.0.1", "prebuild-install": "^7.0.1" } }, "sha512-pZ9FsVZpHdUKqyWynuCc9IBLkZPJMpDzpNk4YNPCizbIXHYifpYeWqSF35REHGIWi9JMCf11QzapsyQGo/Y4Ig=="],
 

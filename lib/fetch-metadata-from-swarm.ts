@@ -1,8 +1,8 @@
 import discover from "./discover";
 import * as utils from './utils';
 import * as defaults from './defaults';
-import { Metadata, MetadataResult } from '../types/metadata';
-import { TorrentMetadata } from './create-torrent-file';
+import type { Metadata, MetadataResult } from '../types/metadata';
+import type { TorrentMetadata } from './create-torrent-file';
 
 interface TorrentMetadataOptions {
   createdBy?: string;
